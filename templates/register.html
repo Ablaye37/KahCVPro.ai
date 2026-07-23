@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription - KahCVPro.ai</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
+<form action="/register" method="post">
 
-<header>
-    <h1>KahCVPro.ai</h1>
+    <input type="text"
+           name="nom"
+           placeholder="Nom complet"
+           required>
 
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/register">Inscription</a>
-    </nav>
-</header>
+    <br><br>
 
-<section class="hero">
-    <h2>Créer un compte</h2>
+    <input type="email"
+           name="email"
+           placeholder="Adresse e-mail"
+           required>
 
-    <form>
-        <input type="text" placeholder="Nom complet"><br><br>
+    <br><br>
 
-        <input type="email" placeholder="Adresse e-mail"><br><br>
+    <input type="password"
+           name="mot_de_passe"
+           placeholder="Mot de passe"
+           required>
 
-        <input type="password" placeholder="Mot de passe"><br><br>
+    <br><br>
 
-        <button type="submit">S'inscrire</button>
-    </form>
-</section>
+    <button type="submit">
+        S'inscrire
+    </button>
 
-</body>
-</html>
+</form>

@@ -1,3 +1,10 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f8fafc;
+    color:#333;
+}
+
 header{
     display:flex;
     justify-content:space-between;
@@ -7,6 +14,10 @@ header{
     color:white;
 }
 
+header h1{
+    margin:0;
+}
+
 nav a{
     color:white;
     text-decoration:none;
@@ -14,13 +25,18 @@ nav a{
     font-weight:bold;
 }
 
-.hero{
-    text-align:center;
-    padding:100px 20px;
+nav a:hover{
+    text-decoration:underline;
 }
 
+.hero{
+    text-align:center;
+    padding:80px 20px;
+}
+
+
 .hero h2{
-    font-size:48px;
+    font-size:42px;
     color:#1e3a8a;
 }
 
@@ -29,6 +45,32 @@ nav a{
     color:#555;
     margin-bottom:30px;
 }
+
+
+form{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+input,
+textarea{
+    width:90%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:16px;
+}
+
+
+textarea{
+    resize:vertical;
+}
+
 
 button{
     background:#2563eb;
@@ -40,6 +82,32 @@ button{
     cursor:pointer;
 }
 
+
 button:hover{
     background:#1d4ed8;
+}
+
+
+/* Style du CV */
+
+.cv-card{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+.cv-card h2{
+    color:#2563eb;
+}
+
+.cv-card h3{
+    color:#1e3a8a;
+}
+
+.cv-card p{
+    line-height:1.6;
 }

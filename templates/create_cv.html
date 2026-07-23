@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer mon CV - KahCVPro.ai</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>KahCVPro.ai</h1>
+</header>
+
+<section class="hero">
+
+<h2>Créer mon CV</h2>
+
+<form action="/create-cv" method="post">
+
+<input type="text" name="nom" placeholder="Nom complet" required>
+<br><br>
+
+<input type="email" name="email" placeholder="Adresse e-mail" required>
+<br><br>
+
+<input type="text" name="telephone" placeholder="Numéro de téléphone">
+<br><br>
+
+<textarea name="profil" placeholder="Profil professionnel" rows="5"></textarea>
+<br><br>
+
+<textarea name="experience" placeholder="Expérience professionnelle" rows="5"></textarea>
+<br><br>
+
+<textarea name="formation" placeholder="Formation" rows="5"></textarea>
+<br><br>
+
+<textarea name="competences" placeholder="Compétences" rows="5"></textarea>
+<br><br>
+
+<button type="submit">
+Enregistrer mon CV
+</button>
+
+</form>
+
+</section>
+
+</body>
+</html>
