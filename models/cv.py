@@ -15,3 +15,4 @@ class CV(Base):
     experience = Column(Text)
     formation = Column(Text)
     competences = Column(Text)
+

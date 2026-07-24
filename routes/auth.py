@@ -79,3 +79,13 @@ async def login(
             "nom": user.nom
         }
     )
+@router.get("/dashboard", response_class=HTMLResponse)
+async def dashboard(request: Request):
+
+    return templates.TemplateResponse(
+        request=request,
+        name="dashboard.html",
+        context={
+            "nom": "Utilisateur"
+        }
+    )

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - KahCVPro.ai</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>KahCVPro.ai - Administration</h1>
+
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/my-cv">Mes CV</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h2>📊 Tableau de bord Administrateur</h2>
+
+    <div class="dashboard-cards">
+
+        <div class="card">
+            <h3>👥 Utilisateurs</h3>
+            <p>{{ nombre_users }}</p>
+        </div>
+
+        <div class="card">
+            <h3>📄 CV créés</h3>
+            <p>{{ nombre_cvs }}</p>
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <h2>Utilisateurs</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+        </tr>
+
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.nom }}</td>
+            <td>{{ user.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br>
+
+    <h2>CV enregistrés</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+        </tr>
+
+        {% for cv in cvs %}
+        <tr>
+            <td>{{ cv.id }}</td>
+            <td>{{ cv.nom }}</td>
+            <td>{{ cv.email }}</td>
+            <td>{{ cv.telephone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</section>
+
+</body>

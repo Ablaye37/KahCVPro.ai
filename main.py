@@ -5,6 +5,7 @@ from fastapi.templating import Jinja2Templates
 
 from routes.auth import router as auth_router
 from routes.cv import router as cv_router
+from routes.admin import router as admin_router
 
 app = FastAPI()
 
@@ -14,7 +15,7 @@ templates = Jinja2Templates(directory="templates")
 
 app.include_router(auth_router)
 app.include_router(cv_router)
-
+app.include_router(admin_router)
 
 @app.get("/", response_class=HTMLResponse)
 async def accueil(request: Request):

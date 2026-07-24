@@ -3,22 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de bord - KahCVPro.ai</title>
+    <title>Dashboard - KahCVPro.ai</title>
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
 
 <header>
     <h1>KahCVPro.ai</h1>
+
+    <nav>
+        <a href="/">Accueil</a>
+        <a href="/my-cv">Mes CV</a>
+        <a href="/create-cv">Créer CV</a>
+        <a href="/admin">Admin</a>
+    </nav>
 </header>
 
+
 <section class="hero">
+
     <h2>Bienvenue {{ nom }} 👋</h2>
 
-    <p>Tu es connecté à ton espace personnel.</p>
+    <p>
+        Votre espace professionnel pour créer, améliorer et gérer vos CV.
+    </p>
 
-    <button>Créer mon CV</button>
 </section>
+
+
+<section class="dashboard-cards">
+
+
+    <div class="card">
+        <h3>📄 Nouveau CV</h3>
+
+        <p>
+            Créez un CV professionnel en quelques minutes.
+        </p>
+
+        <a href="/create-cv">
+            <button>
+                Créer maintenant
+            </button>
+        </a>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <h3>👤 Mes CV</h3>
+
+        <p>
+            Consultez et gérez vos CV enregistrés.
+        </p>
+
+        <a href="/my-cv">
+            <button>
+                Voir mes CV
+            </button>
+        </a>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <h3>🤖 Assistant IA</h3>
+
+        <p>
+            Améliorez vos descriptions professionnelles avec l'intelligence artificielle.
+        </p>
+
+        <button>
+            Bientôt disponible
+        </button>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <h3>⚙️ Administration</h3>
+
+        <p>
+            Gestion des utilisateurs et statistiques.
+        </p>
+
+        <a href="/admin">
+            <button>
+                Accéder
+            </button>
+        </a>
+
+    </div>
+
+
+</section>
+
 
 </body>
 </html>
