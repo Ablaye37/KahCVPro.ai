@@ -67,7 +67,7 @@ async def my_cv(request: Request):
             "cvs": cv
         }
     )
-@router.get("/download-cv/{cv_id}")
+@router.get("/download-pdf/{cv_id}")
 async def download_cv(cv_id: int):
 
     db: Session = SessionLocal()
@@ -83,24 +83,51 @@ async def download_cv(cv_id: int):
 
     pdf = canvas.Canvas(filename)
 
-    pdf.drawString(50, 800, f"Nom : {cv.nom}")
+    # Titre
+    pdf.setFont("Helvetica-Bold", 22)
+    pdf.drawString(50, 800, cv.nom)
+
+    pdf.setFont("Helvetica", 12)
     pdf.drawString(50, 770, f"Email : {cv.email}")
-    pdf.drawString(50, 740, f"Telephone : {cv.telephone}")
+    pdf.drawString(50, 750, f"Téléphone : {cv.telephone}")
 
-    pdf.drawString(50, 700, "Profil :")
-    pdf.drawString(50, 670, cv.profil)
 
-    pdf.drawString(50, 630, "Experience :")
-    pdf.drawString(50, 600, cv.experience)
+    # Profil
+    pdf.setFont("Helvetica-Bold", 15)
+    pdf.drawString(50, 700, "Profil professionnel")
 
-    pdf.drawString(50, 560, "Formation :")
-    pdf.drawString(50, 530, cv.formation)
+    pdf.setFont("Helvetica", 11)
+    pdf.drawString(50, 675, cv.profil[:1000])
 
-    pdf.drawString(50, 490, "Competences :")
-    pdf.drawString(50, 460, cv.competences)
+
+    # Expérience
+    pdf.setFont("Helvetica-Bold", 15)
+    pdf.drawString(50, 600, "Expérience professionnelle")
+
+    pdf.setFont("Helvetica", 11)
+    pdf.drawString(50, 575, cv.experience[:1000])
+
+
+    # Formation
+    pdf.setFont("Helvetica-Bold", 15)
+    pdf.drawString(50, 500, "Formation")
+
+    pdf.setFont("Helvetica", 11)
+    pdf.drawString(50, 475, cv.formation[:1000])
+
+
+    # Compétences
+    pdf.setFont("Helvetica-Bold", 15)
+    pdf.drawString(50, 400, "Compétences")
+
+    pdf.setFont("Helvetica", 11)
+    pdf.drawString(50, 375, cv.competences[:1000])
+
+
+    pdf.setFont("Helvetica-Oblique", 9)
+    pdf.drawString(50, 50, "Créé avec KahCVPro.ai")
 
     pdf.save()
-
     return FileResponse(
         filename,
         media_type="application/pdf",
